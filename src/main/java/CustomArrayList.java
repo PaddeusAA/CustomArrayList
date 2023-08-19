@@ -21,7 +21,7 @@ public class CustomArrayList {
 
     public void remove(int elementIndex){
         for (int i = 2; i < elements.length; i++) {
-            //выполняем перемещение элементов к началу, в результате чего пустая ячейка окажется в конце
+            //выполняется перемещение элементов к началу, в результате чего пустая ячейка окажется в конце
             elements[i-1] = elements[i];
             elements[i] = null;
         }
@@ -36,11 +36,27 @@ public class CustomArrayList {
         }
     }
 
+    //Очистка массива
     public void clear(){
         for (int i = 0; i < elements.length; i++){
             elements[i] = null;
         }
         size = 0;
+    }
+
+    // Возвращает элемент под нужным индексом
+    public String get(int elementIndex){
+        return elements[elementIndex];
+    }
+
+    // Возвращает размер массива (занятых ячеек)
+    public int size(){
+        return size;
+    }
+
+    // Возващает размер массива (capacity)
+    public int arraySize(){
+        return capacity;
     }
 
     // Метод автоматически вызывается когда заканчиваются свободные ячейки
